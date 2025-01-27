@@ -10,8 +10,6 @@ public class G {
                 Hello! I'm G
                 What can I do for you?
                 ____________________________________________________________
-                Bye. Hope to see you again soon!
-                ____________________________________________________________
                 """;
         System.out.println(message);
     }
