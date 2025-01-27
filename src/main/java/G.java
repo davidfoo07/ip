@@ -7,7 +7,7 @@ public class G {
         //         + "|____/ \\__,_|_|\\_\\___|\n";
         String message = """
                 ____________________________________________________________
-                Hello! I'm [YOUR CHATBOT NAME]
+                Hello! I'm G
                 What can I do for you?
                 ____________________________________________________________
                 Bye. Hope to see you again soon!
