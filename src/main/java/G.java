@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class G {
@@ -15,16 +16,29 @@ public class G {
                 """;
 
         System.out.println(message);
+        ArrayList<String> array = new ArrayList<>();
         Scanner scn = new Scanner(System.in);
         String str1 = scn.nextLine();
-
         while (!str1.equals("bye")) {
-            String echo = 
-                    "_________________________________\n" +
-                    str1 + "\n" +
-                    "_________________________________\n";
+            if (str1.equals("list")) {
+                System.out.println("_________________________________\n");
 
-            System.out.println(echo);
+                for (int i = 0; i < array.size(); i++) {
+                    System.out.println(i + 1 + ". " + array.get(i));
+                };
+
+                System.out.println("_________________________________\n");
+
+
+            } else {
+                array.add(str1);
+                String echo = 
+                        "_________________________________\n" +
+                        "added: " + str1 + "\n" +
+                        "_________________________________\n";
+    
+                System.out.println(echo);
+            }
             str1 = scn.nextLine();
         }
 
