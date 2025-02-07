@@ -39,17 +39,31 @@ public class G {
                     } else if (command.equals("deadline")) {
                         String[] parts = details.split("/by", 2);
                         if (parts.length == 2) {
-                            tasks.add(new Deadline(parts[0].trim(), parts[1].trim()));
-                            System.out.println("Added deadline: " + parts[0].trim());
+                            try {
+                                tasks.add(new Deadline(parts[0].trim(), parts[1].trim()));
+                                System.out.println("Added deadline: " + parts[0].trim());
+                            } catch (Exception e) {
+                                System.out.println("Invalid date format. Use yyyy-mm-dd.");
+                            }
+                        } else {
+                            System.out.println("Invalid format. Use: deadline <task> /by yyyy-mm-dd.");
                         }
                     } else if (command.equals("event")) {
                         String[] parts = details.split("/from", 2);
                         if (parts.length == 2) {
                             String[] timeParts = parts[1].split("/to", 2);
                             if (timeParts.length == 2) {
-                                tasks.add(new Event(parts[0].trim(), timeParts[0].trim(), timeParts[1].trim()));
-                                System.out.println("Added event: " + parts[0].trim());
+                                try {
+                                    tasks.add(new Event(parts[0].trim(), timeParts[0].trim(), timeParts[1].trim()));
+                                    System.out.println("Added event: " + parts[0].trim());
+                                } catch (Exception e) {
+                                    System.out.println("Invalid date format. Use yyyy-mm-dd.");
+                                }
+                            } else {
+                                System.out.println("Invalid format. Use: event <task> /from yyyy-mm-dd /to yyyy-mm-dd.");
                             }
+                        } else {
+                            System.out.println("Invalid format. Use: event <task> /from yyyy-mm-dd /to yyyy-mm-dd.");
                         }
                     } else if (command.equals("delete")) {
                         try {
@@ -63,7 +77,52 @@ public class G {
                         } catch (NumberFormatException e) {
                             System.out.println("Invalid format. Use: delete <task_number>.");
                         }
+                    } else if (command.equals("mark")) {
+                        try {
+                            int index = Integer.parseInt(details) - 1;
+                            if (index >= 0 && index < tasks.size()) {
+                                Task t = tasks.get(index);
+                                if (t.getStatus()) {
+                                    System.out.println("____________________________________________________________");
+                                    System.out.println("This task has already been marked as done.");
+                                    System.out.println("____________________________________________________________");
+                                } else {
+                                    t.setStatus(true); // Mark as done
+                                    System.out.println("____________________________________________________________");
+                                    System.out.println("Nice! I've marked this task as done:");
+                                    System.out.println("  " + t);
+                                    System.out.println("____________________________________________________________");
+                                }
+                            } else {
+                                System.out.println("Task number " + (index + 1) + " does not exist.");
+                            }
+                        } catch (NumberFormatException e) {
+                            System.out.println("Invalid format. Use: mark <task_number>.");
+                        }
+                    } else if (command.equals("unmark")) {
+                        try {
+                            int index = Integer.parseInt(details) - 1;
+                            if (index >= 0 && index < tasks.size()) {
+                                Task t = tasks.get(index);
+                                if (!t.getStatus()) {
+                                    System.out.println("____________________________________________________________");
+                                    System.out.println("This task is already marked as not done.");
+                                    System.out.println("____________________________________________________________");
+                                } else {
+                                    t.setStatus(false); // Mark as not done
+                                    System.out.println("____________________________________________________________");
+                                    System.out.println("OK, I've marked this task as not done yet:");
+                                    System.out.println("  " + t);
+                                    System.out.println("____________________________________________________________");
+                                }
+                            } else {
+                                System.out.println("Task number " + (index + 1) + " does not exist.");
+                            }
+                        } catch (NumberFormatException e) {
+                            System.out.println("Invalid format. Use: unmark <task_number>.");
+                        }
                     }
+
                 }
             }
             str1 = scn.nextLine().trim();
@@ -101,18 +160,36 @@ public class G {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(" \\| ");
+
+                if (parts.length < 3) {  // Ensure at least task type, status, and description exist
+                    System.out.println("Skipping malformed line: " + line);
+                    continue;
+                }
+
                 switch (parts[0]) {
                     case "T":
                         tasks.add(new Todo(parts[2], parts[1].equals("1")));
                         break;
                     case "D":
+                        if (parts.length < 4) {
+                            System.out.println("Skipping malformed deadline entry: " + line);
+                            continue;
+                        }
                         tasks.add(new Deadline(parts[2], parts[3], parts[1].equals("1")));
                         break;
                     case "E":
+                        if (parts.length < 5) {
+                            System.out.println("Skipping malformed event entry: " + line);
+                            continue;
+                        }
                         tasks.add(new Event(parts[2], parts[3], parts[4], parts[1].equals("1")));
                         break;
+                    default:
+                        System.out.println("Skipping unknown task type: " + line);
                 }
+
             }
+
             br.close();
         } catch (IOException e) {
             System.out.println("Error loading tasks from file.");

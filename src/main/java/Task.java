@@ -16,8 +16,8 @@ public abstract class Task {
         return (isDone ? "[X]" : "[ ]"); // mark done task with X
     }
 
-    public void setStatus() {
-        this.isDone = true;
+    public void setStatus(boolean status) {
+        this.isDone = status;
     }
 
     public Boolean getStatus() {
@@ -25,7 +25,7 @@ public abstract class Task {
     }
 
     public String toString() {
-        return this.getStatusIcon() + this.description;
+        return this.getStatusIcon() + ' ' + this.description;
     }
 
     public abstract String toFileString();
