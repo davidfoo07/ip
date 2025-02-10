@@ -40,7 +40,7 @@ public class Storage {
                         tasks.add(new Deadline(parts[2], parts[3], parts[1].equals("1")));
                         break;
                     case "E":
-                        tasks.add(new Event(parts[2], parts[3], parts[4]));
+                        tasks.add(new Event(parts[2], parts[3], parts[4],  parts[1].equals("1")));
                         break;
                 }
             }
