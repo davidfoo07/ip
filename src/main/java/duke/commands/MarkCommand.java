@@ -6,6 +6,10 @@ import duke.ui.Ui;
 public class MarkCommand extends Command {
     private final int index;
 
+    /**
+     * 
+     * @param index
+     */
     public MarkCommand(int index) {
         this.index = index;
     }

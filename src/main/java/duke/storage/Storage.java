@@ -7,6 +7,10 @@ import duke.tasks.*;
 public class Storage {
     private final String filePath;
 
+    /**
+     * 
+     * @param filePath
+     */
     public Storage(String filePath) {
         this.filePath = filePath;
         File file = new File(filePath);
@@ -25,6 +29,10 @@ public class Storage {
         }
     }
 
+    /**
+     * 
+     * @return
+     */
     public ArrayList<Task> load() {
         ArrayList<Task> tasks = new ArrayList<>();
 
@@ -52,6 +60,10 @@ public class Storage {
         return tasks;
     }
 
+    /**
+     * 
+     * @param tasks
+     */
     public void save(ArrayList<Task> tasks) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(this.filePath))){
             for (Task task: tasks) {
@@ -62,8 +74,4 @@ public class Storage {
             System.out.println("Error saving tasks.");
         }
     }
-
-
-
-
 }

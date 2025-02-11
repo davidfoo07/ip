@@ -6,6 +6,11 @@ import duke.tasks.Todo;
 import duke.tasks.Deadline;
 
 public class Parser {
+    /**
+     * 
+     * @param userInput
+     * @return
+     */
     public static Command parse(String userInput) {
         String[] parts = userInput.split(" ", 2);
         String command = parts[0];
