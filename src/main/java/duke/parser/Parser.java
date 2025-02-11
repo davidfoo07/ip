@@ -35,6 +35,9 @@ public class Parser {
             case "delete":
                 return new DeleteCommand(Integer.parseInt(parts[1]) - 1);
             
+            case "find":
+                return new FindCommand(parts[1]);
+
             case "bye":
                 return new ExitCommand();
 
