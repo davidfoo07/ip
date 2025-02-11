@@ -6,6 +6,10 @@ import duke.ui.Ui;
 public class InvalidCommand extends Command {
     private String error;
 
+    /**
+     * 
+     * @param error
+     */
     public InvalidCommand(String error) {
         this.error = error;
     }

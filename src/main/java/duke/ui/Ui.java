@@ -33,6 +33,10 @@ public class Ui {
         System.out.print("Bye. Hope to see you again soon!\n");
     }
 
+    /**
+     * 
+     * @param error
+     */
     public void showError(String error) {
         System.out.println("Error: " + error);
     }

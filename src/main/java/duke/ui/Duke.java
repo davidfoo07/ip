@@ -1,8 +1,9 @@
+package duke.ui;
+
 import duke.commands.Command;
 import duke.parser.Parser;
 import duke.storage.Storage;
 import duke.tasks.TaskList;
-import duke.ui.Ui;
 
 public class Duke {
 
@@ -10,6 +11,10 @@ public class Duke {
     private TaskList tasks;
     private Ui ui;
 
+    /**
+     * 
+     * @param filePath
+     */
     public Duke(String filePath) {
         ui = new Ui();
         storage = new Storage(filePath);
@@ -21,6 +26,9 @@ public class Duke {
         }
     }
 
+    /**
+     * 
+     */
     public void run() {
         ui.showWelcome();
         boolean isExit = false;
@@ -39,6 +47,10 @@ public class Duke {
         }
     }
 
+    /**
+     * 
+     * @param args
+     */
     public static void main(String[] args) {
         new Duke(System.getProperty("user.home") + "/Documents/CS2103T/tasks.txt").run();
     }
