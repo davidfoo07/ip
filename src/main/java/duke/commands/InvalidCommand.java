@@ -1,20 +1,18 @@
 package duke.commands;
+
 import duke.storage.Storage;
 import duke.tasks.TaskList;
 import duke.ui.Ui;
 
 public class InvalidCommand extends Command {
-    private String error;
+    private final String error;
 
-    /**
-     * 
-     * @param error
-     */
     public InvalidCommand(String error) {
         this.error = error;
     }
+
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) {
-        ui.showError("Invalid command: " + this.error);
+    public String execute(TaskList tasks, Ui ui, Storage storage) {
+        return ui.showError("Invalid command: " + this.error);
     }
 }

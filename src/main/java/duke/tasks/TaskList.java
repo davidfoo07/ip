@@ -1,71 +1,122 @@
 package duke.tasks;
+
 import java.util.ArrayList;
 
 public class TaskList {
     private final ArrayList<Task> tasks;
 
+    /**
+     * Default constructor for an empty task list.
+     */
     public TaskList() {
-        this.tasks = new ArrayList<Task>();
+        this.tasks = new ArrayList<>();
     }
 
+    /**
+     * Constructor for initializing with an existing list of tasks.
+     *
+     * @param tasks The list of tasks.
+     */
     public TaskList(ArrayList<Task> tasks) {
         this.tasks = tasks;
     }
 
-    public void addTask(Task task) {
+    /**
+     * Adds a task to the list.
+     *
+     * @param task The task to add.
+     * @return The added task.
+     */
+    public Task addTask(Task task) {
         tasks.add(task);
-        System.out.println("Added task: " + task);
+        return task;
     }
 
-    public void deleteTask(int index) {
-        if (index >= 0 && index < tasks.size()) {
-            Task removedTask = tasks.remove(index);
-            System.out.println("Deleted task: " + removedTask);
-        } else {
-            System.out.println("Task number " + (index + 1) + " does not exist.");
-        }
+    /**
+     * Deletes a task from the list.
+     *
+     * @param index The index of the task to delete.
+     * @return The deleted task if successful.
+     * @throws IndexOutOfBoundsException if the index is invalid.
+     */
+    public Task deleteTask(int index) throws IndexOutOfBoundsException {
+        return tasks.remove(index);
     }
 
-    public void markTask(int index) {
-        if (index >= 0 && index < tasks.size()) {
-            tasks.get(index).setStatus(true);
-            System.out.println("Marked as done: Task " + tasks.get(index));
-        } else {
-            System.out.println("Invalid task number.");
-        }
+    /**
+     * Marks a task as done.
+     *
+     * @param index The index of the task to mark.
+     * @return The marked task.
+     * @throws IndexOutOfBoundsException if the index is invalid.
+     */
+    public Task markTask(int index) throws IndexOutOfBoundsException {
+        Task task = tasks.get(index);
+        task.setStatus(true);
+        return task;
     }
 
-    public void unmarkTask(int index) {
-        if (index >= 0 && index < tasks.size()) {
-            tasks.get(index).setStatus(false);
-            System.out.println("Unmarked: Task " + tasks.get(index));
-        } else {
-            System.out.println("Invalid task number.");
-        }
+    /**
+     * Unmarks a task as not done.
+     *
+     * @param index The index of the task to unmark.
+     * @return The unmarked task.
+     * @throws IndexOutOfBoundsException if the index is invalid.
+     */
+    public Task unmarkTask(int index) throws IndexOutOfBoundsException {
+        Task task = tasks.get(index);
+        task.setStatus(false);
+        return task;
     }
 
-    public void listTasks() {
+    /**
+     * Returns a formatted string of all tasks.
+     *
+     * @return A string listing all tasks.
+     */
+    public String listTasks() {
         if (tasks.isEmpty()) {
-            System.out.println("The list is empty.");
+            return "The list is empty.";
         } else {
-            System.out.println("Here are the tasks in your list:");
+            StringBuilder sb = new StringBuilder("Here are the tasks in your list:\n");
             for (int i = 0; i < tasks.size(); i++) {
-                System.out.println((i + 1) + ". " + tasks.get(i));
+                sb.append((i + 1)).append(". ").append(tasks.get(i)).append("\n");
             }
+            return sb.toString().trim();
         }
     }
 
+    /**
+     * Retrieves all tasks in the list.
+     *
+     * @return The list of tasks.
+     */
     public ArrayList<Task> getTasks() {
         return tasks;
     }
 
+    /**
+     * Finds tasks containing a specific keyword.
+     *
+     * @param keyword The keyword to search for.
+     * @return A list of tasks that match the keyword.
+     */
     public ArrayList<Task> findTask(String keyword) {
-        ArrayList<Task> matchingTaskList = new ArrayList<Task>();
+        ArrayList<Task> matchingTasks = new ArrayList<>();
         for (Task task : tasks) {
             if (task.getDescription().contains(keyword)) {
-                matchingTaskList.add(task);
+                matchingTasks.add(task);
             }
         }
-        return matchingTaskList;
+        return matchingTasks;
+    }
+
+    /**
+     * Returns the number of tasks in the list.
+     *
+     * @return The size of the task list.
+     */
+    public int size() {
+        return tasks.size();
     }
 }

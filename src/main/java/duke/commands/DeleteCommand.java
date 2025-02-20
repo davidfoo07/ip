@@ -1,23 +1,25 @@
 package duke.commands;
+
 import duke.storage.Storage;
+import duke.tasks.Task;
 import duke.tasks.TaskList;
 import duke.ui.Ui;
 
 public class DeleteCommand extends Command {
     private final int index;
 
-    /**
-     * 
-     * @param index
-     */
     public DeleteCommand(int index) {
         this.index = index;
     }
 
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) {
-        tasks.deleteTask(index);
-        storage.save(tasks.getTasks());
+    public String execute(TaskList tasks, Ui ui, Storage storage) {
+        try {
+            Task task = tasks.deleteTask(index);
+            storage.save(tasks.getTasks());
+            return ui.displayDeleteTask(task, tasks.size());
+        } catch (IndexOutOfBoundsException e) {
+            return ui.showError("Invalid task index for deletion.");
+        }
     }
-
 }
