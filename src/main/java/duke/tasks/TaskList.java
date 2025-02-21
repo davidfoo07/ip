@@ -39,7 +39,8 @@ public class TaskList {
      * @return The deleted task if successful.
      * @throws IndexOutOfBoundsException if the index is invalid.
      */
-    public Task deleteTask(int index) throws IndexOutOfBoundsException {
+    public Task deleteTask(int index) {
+        assert index >= 0 && index < tasks.size() : "Index out of bounds in deleteTask!";
         return tasks.remove(index);
     }
 
@@ -50,7 +51,8 @@ public class TaskList {
      * @return The marked task.
      * @throws IndexOutOfBoundsException if the index is invalid.
      */
-    public Task markTask(int index) throws IndexOutOfBoundsException {
+    public Task markTask(int index) {
+        assert index >= 0 && index < tasks.size() : "Index out of bounds in markTask!";
         Task task = tasks.get(index);
         task.setStatus(true);
         return task;
@@ -63,7 +65,8 @@ public class TaskList {
      * @return The unmarked task.
      * @throws IndexOutOfBoundsException if the index is invalid.
      */
-    public Task unmarkTask(int index) throws IndexOutOfBoundsException {
+    public Task unmarkTask(int index) {
+        assert index >= 0 && index < tasks.size() : "Index out of bounds in unmarkTask!";
         Task task = tasks.get(index);
         task.setStatus(false);
         return task;

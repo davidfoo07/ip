@@ -19,8 +19,10 @@ public class Ui {
      * @return The formatted message.
      */
     public String showMessage(String message) {
+        assert message != null : "UI message should not be null!";
         return message;
     }
+
 
     /**
      * Displays a welcome message when the application starts.
