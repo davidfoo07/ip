@@ -31,10 +31,16 @@ public class Duke {
         try {
             tasks = new TaskList(storage.load());
         } catch (Exception e) {
-            ui.showLoadingError();
+            System.out.println(ui.showLoadingError());
             tasks = new TaskList();
         }
+
+        // Assertions to ensure all essential components are initialized
+        assert ui != null : "UI should not be null!";
+        assert storage != null : "Storage should not be null!";
+        assert tasks != null : "TaskList should not be null!";
     }
+
 
     /**
      * Generates a response based on user input.
@@ -55,6 +61,7 @@ public class Duke {
                 Platform.exit();
             }
             
+            assert response != null : "Response should not be null!";
             return response;
         } catch (Exception e) {
             return ui.showError(e.getMessage());

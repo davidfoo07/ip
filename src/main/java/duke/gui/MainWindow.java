@@ -29,8 +29,14 @@ public class MainWindow extends AnchorPane {
 
     @FXML
     public void initialize() {
+        assert scrollPane != null : "scrollPane should not be null!";
+        assert dialogContainer != null : "dialogContainer should not be null!";
+        assert userInput != null : "userInput should not be null!";
+        assert sendButton != null : "sendButton should not be null!";
+        
         scrollPane.vvalueProperty().bind(dialogContainer.heightProperty());
     }
+
 
     /** Injects the Duke instance */
     public void setDuke(Duke d) {
