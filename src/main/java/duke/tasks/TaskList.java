@@ -1,6 +1,7 @@
 package duke.tasks;
 
 import java.util.ArrayList;
+import duke.ui.Ui;
 
 public class TaskList {
     private final ArrayList<Task> tasks;
@@ -22,14 +23,30 @@ public class TaskList {
     }
 
     /**
-     * Adds a task to the list.
+     * Adds a task to the list if it is not a duplicate.
      *
      * @param task The task to add.
-     * @return The added task.
+     * @return Message indicating success or if a duplicate was found.
      */
-    public Task addTask(Task task) {
+    public String addTask(Task task, Ui ui) {
+        assert task != null : "Task should not be null!";
+        
+        if (isDuplicate(task)) {
+            return "Task already exists in the list! Duplicate tasks are not allowed.";
+        }
+
         tasks.add(task);
-        return task;
+        return ui.displayAddTask(task, tasks.size());
+    }
+
+    /**
+     * Checks if a task already exists in the list.
+     *
+     * @param task The task to check.
+     * @return True if the task exists, false otherwise.
+     */
+    private boolean isDuplicate(Task task) {
+        return tasks.stream().anyMatch(existingTask -> existingTask.equals(task));
     }
 
     /**
