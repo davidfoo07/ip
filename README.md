@@ -14,10 +14,10 @@ double-click it.
 add your tasks.
 let it manage your tasks for you 😉
 And it is FREE!
-
+```
 Features:
 
 - [x] Managing tasks
 - [ ] Managing deadlines (coming soon)
 - [ ] Reminders (coming soon)
-```
+
