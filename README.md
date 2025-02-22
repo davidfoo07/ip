@@ -10,7 +10,7 @@ G frees your mind from remembering tasks. It’s:
 All you need to do is:
 
 1. Clone the repository with this command: git clone https://github.com/davidfoo07/ip.git
-2. cd in to the ip directory.
+2. cd into the ip directory.
 3. Run it with this command: java -jar build/libs/g.jar
 4. Add your tasks.  
 5. Let it manage your tasks for you 😉  
