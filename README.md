@@ -1,6 +1,7 @@
-Duke
-“Your mind is for having ideas, not holding them.” – David Allen (source)
+#**Duke**
+>## “Your mind is for having ideas, not holding them.” – David Allen (source)
 
+```
 Duke frees your mind of having to remember things you need to do. It's,
 
 text-based
@@ -16,6 +17,7 @@ And it is FREE!
 
 Features:
 
- Managing tasks
- Managing deadlines (coming soon)
- Reminders (coming soon)
+- [x] Managing tasks
+- [ ] Managing deadlines (coming soon)
+- [ ] Reminders (coming soon)
+```
