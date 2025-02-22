@@ -9,10 +9,11 @@ G frees your mind from remembering tasks. It’s:
 
 All you need to do is:
 
-1. Download it from ([here](#) *(replace with actual download link)* )
-2. Double-click it.  
-3. Add your tasks.  
-4. Let it manage your tasks for you 😉  
+1. Clone the repository with this command: git clone https://github.com/davidfoo07/ip.git
+2. cd in to the ip directory.
+3. Run it with this command: java -jar build/libs/g.jar
+4. Add your tasks.  
+5. Let it manage your tasks for you 😉  
 
 And the best part? It’s **FREE**!
 
