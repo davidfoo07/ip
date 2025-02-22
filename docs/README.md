@@ -12,7 +12,7 @@ It supports **to-dos**, **deadlines**, and **events**. G is **simple**, **fast**
 Easily add tasks with deadlines using the `deadline` command.
 
 #### **Example:**
-```sh
+```
 deadline Submit report /by 2025-02-28
 ```
 
