@@ -1,22 +1,22 @@
 # **Duke**
 >## “Your mind is for having ideas, not holding them.” – David Allen (source)
 
-```
-Duke frees your mind of having to remember things you need to do. It's,
+G frees your mind from remembering tasks. It’s:
 
-text-based
-easy to learn
-FAST SUPER FAST to use
-All you need to do is,
+- text-based  
+- easy to learn  
+- *FAST, SUPER FAST* to use!  
 
-download it from here.
-double-click it.
-add your tasks.
-let it manage your tasks for you 😉
-And it is FREE!
-```
+All you need to do is:/
+
+- Download it from ([here](#) *(replace with actual download link)* )
+* Double-click it.  
++ Add your tasks.  
+- Let it manage your tasks for you 😉  
+
+And the best part? It’s **FREE**!/
+
 Features:
-
 - [x] Managing tasks
 - [ ] Managing deadlines (coming soon)
 - [ ] Reminders (coming soon)
