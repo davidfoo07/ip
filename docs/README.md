@@ -14,7 +14,10 @@ Easily add tasks with deadlines using the `deadline` command.
 #### **Example:**
 ```sh
 deadline Submit report /by 2025-02-28
+```
 
+Expected output: 
+```
 Got it. I've added this task:
 [D][ ] Submit report (by: Feb 28 2025)
 
