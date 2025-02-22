@@ -5,16 +5,16 @@ G frees your mind from remembering tasks. It’s:
 
 - text-based  
 - easy to learn  
-- *FAST, SUPER FAST* to use!  
+- **_FAST, SUPER FAST_** to use!  
 
-All you need to do is:/
+All you need to do is:
 
-- Download it from ([here](#) *(replace with actual download link)* )
-* Double-click it.  
-+ Add your tasks.  
-- Let it manage your tasks for you 😉  
+1. Download it from ([here](#) *(replace with actual download link)* )
+2. Double-click it.  
+3. Add your tasks.  
+4. Let it manage your tasks for you 😉  
 
-And the best part? It’s **FREE**!/
+And the best part? It’s **FREE**!
 
 Features:
 - [x] Managing tasks
