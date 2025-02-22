@@ -1,4 +1,4 @@
-**#Duke**
+# **Duke**
 >## “Your mind is for having ideas, not holding them.” – David Allen (source)
 
 ```
