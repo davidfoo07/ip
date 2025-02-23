@@ -7,6 +7,10 @@ import g.tasks.TaskList;
 import g.ui.Ui;
 import javafx.application.Platform;
 
+/**
+ * The main chatbot class that handles user input, processes commands, 
+ * and manages storage, tasks, and UI interactions.
+ */
 public class G {
 
     private Storage storage;
@@ -14,16 +18,17 @@ public class G {
     private Ui ui;
 
     /**
-     * Default constructor with a predefined file path.
+     * Default constructor that initializes the chatbot with a predefined storage file path.
      */
     public G() {
         this(System.getProperty("user.home") + "/Documents/CS2103T/tasks.txt");
     }
 
     /**
-     * Constructor with a specified file path.
+     * Constructs a chatbot instance with a specified file path for task storage.
+     * Initializes UI, storage, and loads existing tasks from the file.
      *
-     * @param filePath Path to the storage file.
+     * @param filePath The file path where tasks are stored.
      */
     public G(String filePath) {
         ui = new Ui();
@@ -41,12 +46,13 @@ public class G {
         assert tasks != null : "TaskList should not be null!";
     }
 
-
     /**
-     * Generates a response based on user input.
+     * Processes user input and returns an appropriate response.
+     * Commands are parsed and executed, and tasks are saved after every execution.
+     * If the "bye" command is detected, the application will exit.
      *
-     * @param input User input string.
-     * @return Response string from Duke.
+     * @param input The user input command string.
+     * @return A response message from the chatbot.
      */
     public String getResponse(String input) {
         try {
@@ -66,6 +72,5 @@ public class G {
         } catch (Exception e) {
             return ui.showError(e.getMessage());
         }
-}
-
+    }
 }

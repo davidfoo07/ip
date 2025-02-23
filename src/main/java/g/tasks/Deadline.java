@@ -3,37 +3,43 @@ package g.tasks;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Represents a task with a deadline.
+ */
 public class Deadline extends Task {
-   protected LocalDate by;
+   protected LocalDate dueDate;
 
    /**
-    * 
-    * @param var1
-    * @param var2
+    * Constructs a Deadline task.
+    *
+    * @param description The description of the task.
+    * @param dueDate The deadline date in `yyyy-MM-dd` format.
     */
-   public Deadline(String var1, String var2) {
-      super(var1);
-      this.by = LocalDate.parse(var2.trim());
+   public Deadline(String description, String dueDate) {
+      super(description);
+      this.dueDate = LocalDate.parse(dueDate.trim());
    }
 
    /**
-    * 
-    * @param var1
-    * @param var2
-    * @param var3
+    * Constructs a Deadline task with completion status.
+    *
+    * @param description The description of the task.
+    * @param dueDate The deadline date in `yyyy-MM-dd` format.
+    * @param isDone Indicates whether the task is completed.
     */
-   public Deadline(String var1, String var2, boolean var3) {
-      super(var1, var3);
-      this.by = LocalDate.parse(var2.trim());
+   public Deadline(String description, String dueDate, boolean isDone) {
+      super(description, isDone);
+      this.dueDate = LocalDate.parse(dueDate.trim());
    }
 
+   @Override
    public String toString() {
-      String var10000 = this.isDone ? "X" : " ";
-      return "[D][" + var10000 + "] " + this.description + " (by: " + this.by.format(DateTimeFormatter.ofPattern("MMM dd yyyy")) + ")";
+      return "[D][" + (isDone ? "X" : " ") + "] " + description + " (by: " + 
+             dueDate.format(DateTimeFormatter.ofPattern("MMM dd yyyy")) + ")";
    }
 
+   @Override
    public String toFileString() {
-      String var10000 = this.isDone ? "1" : "0";
-      return "D | " + var10000 + " | " + this.description + " | " + this.by;
+      return "D | " + (isDone ? "1" : "0") + " | " + description + " | " + dueDate;
    }
 }
