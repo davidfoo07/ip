@@ -132,8 +132,3 @@ G automatically saves your tasks after every command, ensuring no data is lost e
   - Search for tasks: Quickly find tasks using keywords.
   - Exit the application: Safely close the chatbot.
   - Automatic saving ensures your progress is never lost.
-
-
-## Feature XYZ
-
-// Feature details
