@@ -2,6 +2,8 @@ package g.tasks;
 
 import java.util.ArrayList;
 
+import g.ui.Ui;
+
 public class TaskList {
     private final ArrayList<Task> tasks;
 
@@ -22,14 +24,30 @@ public class TaskList {
     }
 
     /**
-     * Adds a task to the list.
+     * Adds a task to the list if it is not a duplicate.
      *
      * @param task The task to add.
-     * @return The added task.
+     * @return Message indicating success or if a duplicate was found.
      */
-    public Task addTask(Task task) {
+    public String addTask(Task task, Ui ui) {
+        assert task != null : "Task should not be null!";
+        
+        if (isDuplicate(task)) {
+            return "Task already exists in the list! Duplicate tasks are not allowed.";
+        }
+
         tasks.add(task);
-        return task;
+        return ui.displayAddTask(task, tasks.size());
+    }
+
+    /**
+     * Checks if a task already exists in the list.
+     *
+     * @param task The task to check.
+     * @return True if the task exists, false otherwise.
+     */
+    private boolean isDuplicate(Task task) {
+        return tasks.stream().anyMatch(existingTask -> existingTask.equals(task));
     }
 
     /**
@@ -39,7 +57,8 @@ public class TaskList {
      * @return The deleted task if successful.
      * @throws IndexOutOfBoundsException if the index is invalid.
      */
-    public Task deleteTask(int index) throws IndexOutOfBoundsException {
+    public Task deleteTask(int index) {
+        assert index >= 0 && index < tasks.size() : "Index out of bounds in deleteTask!";
         return tasks.remove(index);
     }
 
@@ -50,7 +69,8 @@ public class TaskList {
      * @return The marked task.
      * @throws IndexOutOfBoundsException if the index is invalid.
      */
-    public Task markTask(int index) throws IndexOutOfBoundsException {
+    public Task markTask(int index) {
+        assert index >= 0 && index < tasks.size() : "Index out of bounds in markTask!";
         Task task = tasks.get(index);
         task.setStatus(true);
         return task;
@@ -63,7 +83,8 @@ public class TaskList {
      * @return The unmarked task.
      * @throws IndexOutOfBoundsException if the index is invalid.
      */
-    public Task unmarkTask(int index) throws IndexOutOfBoundsException {
+    public Task unmarkTask(int index) {
+        assert index >= 0 && index < tasks.size() : "Index out of bounds in unmarkTask!";
         Task task = tasks.get(index);
         task.setStatus(false);
         return task;
