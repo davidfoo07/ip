@@ -1,21 +1,24 @@
-Duke
-“Your mind is for having ideas, not holding them.” – David Allen (source)
+# **Duke**
+>## “Your mind is for having ideas, not holding them.” – David Allen (source)
 
-Duke frees your mind of having to remember things you need to do. It's,
+G frees your mind from remembering tasks. It’s:
 
-text-based
-easy to learn
-FAST SUPER FAST to use
-All you need to do is,
+- text-based  
+- easy to learn  
+- **_FAST, SUPER FAST_** to use!  
 
-download it from here.
-double-click it.
-add your tasks.
-let it manage your tasks for you 😉
-And it is FREE!
+All you need to do is:
+
+1. Clone the repository with this command: git clone https://github.com/davidfoo07/ip.git
+2. cd into the ip directory.
+3. Run it with this command: java -jar build/libs/g.jar
+4. Add your tasks.  
+5. Let it manage your tasks for you 😉  
+
+And the best part? It’s **FREE**!
 
 Features:
+- [x] Managing tasks
+- [ ] Managing deadlines (coming soon)
+- [ ] Reminders (coming soon)
 
- Managing tasks
- Managing deadlines (coming soon)
- Reminders (coming soon)
