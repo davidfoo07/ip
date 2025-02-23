@@ -1,9 +1,9 @@
-package duke.parser;
+package g.parser;
 
-import duke.commands.*;
-import duke.tasks.Event;
-import duke.tasks.Todo;
-import duke.tasks.Deadline;
+import g.commands.*;
+import g.tasks.Deadline;
+import g.tasks.Event;
+import g.tasks.Todo;
 
 /**
  * The Parser class is responsible for interpreting user input

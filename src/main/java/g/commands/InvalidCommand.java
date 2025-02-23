@@ -1,8 +1,8 @@
-package duke.commands;
+package g.commands;
 
-import duke.storage.Storage;
-import duke.tasks.TaskList;
-import duke.ui.Ui;
+import g.storage.Storage;
+import g.tasks.TaskList;
+import g.ui.Ui;
 
 public class InvalidCommand extends Command {
     private final String error;

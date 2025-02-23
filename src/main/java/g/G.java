@@ -1,13 +1,13 @@
-package duke;
+package g;
 
-import duke.commands.Command;
-import duke.parser.Parser;
-import duke.storage.Storage;
-import duke.tasks.TaskList;
-import duke.ui.Ui;
+import g.commands.Command;
+import g.parser.Parser;
+import g.storage.Storage;
+import g.tasks.TaskList;
+import g.ui.Ui;
 import javafx.application.Platform;
 
-public class Duke {
+public class G {
 
     private Storage storage;
     private TaskList tasks;
@@ -16,7 +16,7 @@ public class Duke {
     /**
      * Default constructor with a predefined file path.
      */
-    public Duke() {
+    public G() {
         this(System.getProperty("user.home") + "/Documents/CS2103T/tasks.txt");
     }
 
@@ -25,7 +25,7 @@ public class Duke {
      *
      * @param filePath Path to the storage file.
      */
-    public Duke(String filePath) {
+    public G(String filePath) {
         ui = new Ui();
         storage = new Storage(filePath);
         try {

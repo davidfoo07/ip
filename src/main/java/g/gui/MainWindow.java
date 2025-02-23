@@ -1,6 +1,6 @@
-package duke.gui;
+package g.gui;
 
-import duke.Duke;
+import g.G;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -22,7 +22,7 @@ public class MainWindow extends AnchorPane {
     @FXML
     private Button sendButton;
 
-    private Duke duke;
+    private G duke;
 
     private Image userImage = new Image(this.getClass().getResourceAsStream("/images/Dat.png"));
     private Image dukeImage = new Image(this.getClass().getResourceAsStream("/images/Duke.png"));
@@ -39,7 +39,7 @@ public class MainWindow extends AnchorPane {
 
 
     /** Injects the Duke instance */
-    public void setDuke(Duke d) {
+    public void setDuke(G d) {
         duke = d;
     }
 
