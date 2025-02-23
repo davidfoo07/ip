@@ -1,4 +1,4 @@
-# **Duke**
+# **G**
 >## “Your mind is for having ideas, not holding them.” – David Allen (source)
 
 G frees your mind from remembering tasks. It’s:
