@@ -1,8 +1,8 @@
-package duke.storage;
+package g.storage;
 import java.io.*;
 import java.util.ArrayList;
 
-import duke.tasks.*;
+import g.tasks.*;
 
 public class Storage {
     private final String filePath;

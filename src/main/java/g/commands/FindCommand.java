@@ -1,11 +1,11 @@
-package duke.commands;
+package g.commands;
 
 import java.util.ArrayList;
 
-import duke.storage.Storage;
-import duke.tasks.Task;
-import duke.tasks.TaskList;
-import duke.ui.Ui;
+import g.storage.Storage;
+import g.tasks.Task;
+import g.tasks.TaskList;
+import g.ui.Ui;
 
 public class FindCommand extends Command {
     private final String keyword;

@@ -1,8 +1,8 @@
-package duke.gui;
+package g.gui;
 
-import duke.Duke;
 import java.io.IOException;
 
+import g.G;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,7 +14,7 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
 
-    private Duke duke = new Duke();
+    private G duke = new G();
 
     @Override
     public void start(Stage stage) {

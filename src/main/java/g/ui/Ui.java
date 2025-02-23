@@ -1,9 +1,9 @@
-package duke.ui;
+package g.ui;
 
 import java.util.ArrayList;
 
-import duke.tasks.Task;
-import duke.tasks.TaskList;
+import g.tasks.Task;
+import g.tasks.TaskList;
 
 /**
  * The Ui class is responsible for generating formatted messages to be displayed
