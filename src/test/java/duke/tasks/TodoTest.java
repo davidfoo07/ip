@@ -3,6 +3,8 @@ package duke.tasks;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
+import g.tasks.Todo;
+
 public class TodoTest {
 
     @Test

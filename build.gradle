@@ -43,12 +43,12 @@ test {
 }
 
 application {
-    mainClass.set("duke.gui.Launcher")
+    mainClass.set("g.gui.Launcher")
 }
 
 shadowJar {
-    archiveBaseName = "duke"
-    archiveFileName = 'duke.jar'
+    archiveBaseName = "g"
+    archiveFileName = 'g.jar'
     archiveClassifier = null
 }
 
